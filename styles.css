@@ -1,0 +1,740 @@
+/* initial size ,... */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Define variables and colors */
+:root {
+  --color-primary: #3563e9;
+  --color-secondary: #1a202c;
+}
+
+html {
+  font-size: 62.5%; /* default is: 16px so 62.5% * 16 = 10px */
+}
+body {
+  font-family: "Plus Jakarta Sans";
+  color: var(--color-secondary);
+  background-color: #f6f7f9;
+  width: auto;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700px;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600px;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600px;
+}
+label {
+  font-size: 1.4rem;
+  font-weight: 600px;
+}
+@media screen and (min-width: 486px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700px;
+  }
+  label {
+    font-size: 1.6rem;
+    font-weight: 700px;
+  }
+}
+
+.container {
+  margin: 2.4rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  width: 90%;
+  background-color: #fff;
+}
+.container-side {
+  margin: 2.4rem;
+  border-radius: 10px;
+  padding: 0.5rem 3.2rem;
+  width: 90%;
+  background-color: #fff;
+}
+.recent-transaction {
+  overflow: hidden;
+  max-width: 530px;
+  grid-area: recent-transaction;
+}
+.recent-transaction-title h1 {
+  margin: 0;
+}
+.recent-transaction-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 2rem;
+}
+.recent-transaction-title :nth-child(2) {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.transaction-items {
+  display: grid;
+  grid-template-columns: 30% 35% 35%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "car-pic car-name date"
+    "car-pic car-type price";
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: solid 1px #c3d4e966;
+}
+.transaction-items img {
+  max-width: 100%;
+  grid-area: car-pic;
+  align-self: center;
+  padding: 0.5rem;
+}
+.transaction-items .car-name {
+  grid-area: car-name;
+  font-weight: 700;
+}
+.transaction-items .date {
+  grid-area: date;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #90a3bf;
+  text-align: end;
+}
+.transaction-items .car-type {
+  grid-area: car-type;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #90a3bf;
+}
+.transaction-items .price {
+  grid-area: price;
+  font-weight: 700;
+  text-align: end;
+}
+
+@media screen and (min-width: 486px) {
+  .recent-transaction {
+    max-width: 550px;
+  }
+  .recent-transaction-title {
+    font-size: 2rem;
+  }
+  .transaction-items img {
+    font-size: 1.6rem;
+  }
+  .transaction-items .price {
+    font-size: 1.6rem;
+  }
+}
+
+/* Top-five */
+.top-five {
+  display: flex;
+  flex-direction: column;
+  max-width: 530px;
+  grid-area: top-five;
+  height: fit-content;
+}
+.top-five-title h1 {
+  margin-bottom: 0;
+}
+.top-five-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.three-dot .items {
+  width: 4px;
+  height: 4px;
+  border: solid 0.5px #1a202c;
+  border-radius: 50%;
+  display: inline-block;
+}
+.top-five-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.top-five-body .DoughnutChart {
+  /* background-color: #a6cef2; */
+  height: 10vw;
+  width: 10vw;
+  margin: 1rem auto;
+  border-radius: 50%;
+  border: 5px solid #a6cef2;
+  text-align: center;
+}
+.top-five-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  justify-content: start;
+}
+.top-five-list .dot {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  align-self: center;
+  margin-right: 1.2rem;
+}
+
+.top-five-list .first {
+  background-color: #0d3559;
+}
+.top-five-list .second {
+  background-color: #175d9c;
+}
+.top-five-list .third {
+  background-color: #2185de;
+}
+.top-five-list .fourth {
+  background-color: #63a9e8;
+}
+.top-five-list .fiveth {
+  background-color: #a6cef2;
+}
+
+.top-five-list .car-type {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #90a3bf;
+  margin-right: 1rem;
+}
+.top-five .number {
+  font-weight: 600;
+  text-align: end;
+  margin-left: auto;
+}
+@media screen and (min-width: 486px) {
+  .top-five-title div {
+    font-size: 2rem;
+  }
+  .top-five-body .DoughnutChart {
+    margin: 0rem;
+  }
+  .top-five-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+/* detail rental */
+
+.detail-rental {
+  /* border: 1px solid #1a202c; --------to dellllllllllllllllllllllllllllllllllet---------------- */
+  /* max-width: 560px; */
+  grid-area: detail-rental;
+}
+
+.detail-rental img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.detail-rental .car {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "car-picture car-name car-name"
+    "car-picture car-type car-number";
+  align-items: center;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .detail-rental .car {
+    grid-template-areas:
+      "car-picture car-name car-number"
+      "car-picture car-type car-type";
+  }
+}
+
+.detail-rental .car img {
+  width: 90%;
+  grid-area: car-picture;
+}
+
+.detail-rental .car .car-name {
+  grid-area: car-name;
+  font-size: 2rem;
+  color: var(--color-secondary);
+  /* align-self: end; */
+}
+
+.detail-rental .car .car-type {
+  grid-area: car-type;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #3d5278;
+}
+.detail-rental .car .car-number {
+  grid-area: car-number;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #90a3bf;
+  justify-self: end;
+}
+
+.detail-rental .rental-form {
+  border-bottom: 1px solid #c3d4e966;
+  color: var(--color-secondary);
+}
+
+.detail-rental .form-title {
+  font-size: 1.6rem;
+  font-weight: 600px;
+  margin-bottom: 2rem;
+}
+.detail-rental .form-body {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-rental label {
+  margin-bottom: 0.5rem;
+  /* display: block; */
+}
+.rental-form .form-body input[type="text"] {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  background-color: #f6f7f9;
+  border-radius: 10px;
+  border: none;
+  padding: 1.8rem 40% 1.8rem 2.4rem;
+}
+@media screen and (min-width: 768px) {
+  .detail-rental .form-body {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+  }
+  .rental-form .form-body input[type="text"] {
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0;
+    margin: 0.8rem 0;
+  }
+
+  .rental-form .form-body .time {
+    /* background-color: #1a202c; */
+    border-right: 1px solid #c3d4e966;
+  }
+  .rental-form .form-body .location {
+    border-right: 1px solid #c3d4e966;
+  }
+}
+
+.rental-form .form-body input[type="text"]::placeholder {
+  color: #90a3bf;
+}
+
+.detail-rental .rental-total {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  grid-template-areas:
+    "total-price price"
+    "overall price";
+  align-items: start;
+}
+.detail-rental .rental-total h2 {
+  grid-area: total-price;
+  align-self: end;
+  margin: 0;
+}
+
+.detail-rental .rental-total .overall {
+  grid-area: overall;
+  font-size: 1.2rem;
+  color: #90a3bf;
+}
+.detail-rental .rental-total .price {
+  grid-area: price;
+  align-self: center;
+  font-size: 2rem;
+  font-weight: 700px;
+  justify-self: end;
+  /* height: 200%; */
+}
+@media screen and (min-width: 1000px) {
+  .rental-total .overall {
+    font-size: 1.4rem;
+    /* content: "Overall price and includes rental discount"; text shoul be replaced */
+  }
+  .detail-rental .rental-total .price {
+    font-size: 3.2rem;
+  }
+}
+
+/* Navigation Bar */
+.main-header {
+  background-color: #fff;
+  /* border: 1px solid red; */
+  height: 220px;
+  grid-area: main-header;
+}
+
+.nav .nav__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  max-height: 50px;
+}
+
+.nav__container {
+  margin: 0 0rem 0 2.4rem;
+  border-radius: 10px;
+  padding: 3.2rem 0rem 2rem 0rem;
+  width: 90%;
+  background-color: #fff;
+  /* border: 1px solid black; */
+}
+
+.nav .nav__menu {
+  color: #1a202c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+.nav .nav__menu .line {
+  background-color: black;
+  height: 1.5px;
+  width: 18px;
+}
+.nav .nav__profile-picture {
+  width: fit-content;
+  border-radius: 50%;
+  border: 1px solid var(--color-secondary);
+}
+.nav .nav__profile-picture img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.nav a {
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: #3563e9;
+  font-weight: 700px;
+  width: fit-content;
+}
+.nav .nav__search {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: auto;
+  gap: 1rem;
+  position: relative;
+}
+
+.nav .nav__search input[type="search"] {
+  border: 1px solid rgba(195, 212, 233, 0.4);
+  border-radius: 10px;
+  padding: 1.2rem 0.5rem 1.2rem 14%;
+  background-color: #fff;
+  width: 100%;
+}
+.nav .nav__search input[type="text"]::placeholder {
+  color: #3d5278;
+}
+.nav .nav__search .icon {
+  width: 10%;
+  /* color: #1a202c; */
+  /* background-color: #3563e9; */
+  /* border: 1px solid black; */
+}
+.nav .nav__search .icon {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+.nav .nav__search-btn {
+  border: 1px solid rgba(195, 212, 233, 0.4);
+  border-radius: 10px;
+  background-color: #fff;
+  width: 45px;
+}
+
+.nav .nav__search .icon__btn {
+  font-size: 1.6rem;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 2px;
+  top: 4px;
+}
+
+.fa-bars-filter {
+  width: 100px;
+}
+
+.nav .nav__notif {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .main-header {
+    height: 120px;
+    padding: 4rem 3.2rem 4rem 6rem;
+    border: 1px solid rgba(195, 212, 233, 0.4);
+  }
+  .nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    /* border: 2px solid red; */
+  }
+  .nav :nth-child(1) {
+    order: 4;
+    flex-grow: 1;
+  }
+  .nav :nth-child(2) {
+    order: 1;
+    flex-grow: 2;
+  }
+  .nav :nth-child(3) {
+    order: 2;
+    flex-grow: 1;
+  }
+  .nav :nth-child(4) {
+    order: 3;
+    flex-grow: 1;
+  }
+
+  .nav .nav__menu {
+    display: none;
+  }
+  .nav .nav__title {
+    display: inline-block;
+    margin: 0;
+  }
+  .nav .nav__search {
+    margin: 0;
+  }
+  .nav .nav__notif {
+    /* width: 44px;
+    height: 44px; */
+    display: block;
+    margin-left: 8%;
+  }
+  .nav .nav__notif img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #c3d4e966;
+    padding: 10px;
+    margin-left: 1rem;
+  }
+  .nav .nav__profile-picture img {
+    width: 40px;
+    height: 40px;
+    /* padding: 1px; */
+  }
+
+  .nav .nav__search {
+    position: static;
+    /* border: 2px solid blueviolet; */
+    display: flex;
+    align-items: center;
+    width: 40vw;
+  }
+  .nav .nav__search input[type="search"] {
+    border-radius: 70px;
+    /* border: 2px solid red; */
+    order: 2;
+    position: relative;
+    left: -30px;
+  }
+  .nav .nav__search .icon {
+    position: static;
+    /* border: 2px solid rebeccapurple; */
+    /* display: none; */
+    padding-left: 20px;
+    width: 20px;
+    height: 20px;
+    order: 1;
+    z-index: 1;
+  }
+  .nav .nav__search .icon__btn {
+    position: relative;
+    /* display: none; */
+    /* border: 2px solid khaki; */
+    order: 3;
+    top: 2px;
+    left: -80px;
+    height: auto;
+  }
+  .nav .nav__search-btn {
+    position: static;
+    display: none;
+    order: 4;
+  }
+}
+
+.sidebar {
+  display: none;
+  grid-area: sidebar;
+  gap: 0;
+  margin: 0;
+  border-radius: 0;
+}
+@media screen and (min-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+.sidebar h3 {
+  margin: 3.6rem 0;
+  color: #94a7cb66;
+}
+.sidebar .sidebar__items {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+}
+.sidebar .sidebar__items img {
+  width: 20px;
+  height: 20px;
+}
+.sidebar .sidebar__items svg {
+  width: 20px;
+  height: 20px;
+  color: #90a3bf;
+}
+
+.sidebar .sidebar__items a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500px;
+  margin-left: 1.5rem;
+  color: #90a3bf;
+}
+
+.sidebar .sidebar__items:not(.dark):hover {
+  background-color: #3563e9;
+  color: #fff;
+}
+
+.sidebar .sidebar__items:not(.dark):hover svg {
+  /* background-color: #3563e9; */
+  color: #fff;
+}
+.sidebar .sidebar__items:not(.dark):hover a {
+  /* background-color: #3563e9; */
+  color: #fff;
+}
+
+.preferences .dark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.preferences .dark .dark__text {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+.preferences .dark .dark__mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 50px;
+  background-color: #f6f7f9;
+  padding: 0.5rem;
+}
+.preferences .dark .dark__mode svg {
+  border-radius: 50px;
+  width: 3vw;
+  height: 3vw;
+  padding: 0.4rem;
+  margin: 0 0.1rem;
+  max-width: 35px;
+  max-height: 35px;
+}
+
+.preferences .dark .dark__mode svg:hover {
+  background-color: #3563e9;
+  color: #fff;
+}
+
+/* Arrange Sections */
+@media screen and (min-width: 768px) {
+  .page {
+    display: grid;
+    grid-template-columns: 25% 1fr 1fr;
+    grid-template-rows: 120px 250px 1fr;
+    grid-template-areas:
+      "main-header main-header main-header"
+      "sidebar detail-rental top-five"
+      "sidebar detail-rental recent-transaction";
+  }
+  .main-header {
+    grid-area: main-header;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .detail-rental {
+    grid-area: detail-rental;
+    /* min-width: 250px; */
+    margin: 0.5rem 0;
+  }
+  .recent-transaction {
+    grid-area: recent-transaction;
+    margin: 0.5rem 0;
+  }
+
+  .top-five {
+    grid-area: top-five;
+    margin: 0.5rem 0;
+  }
+}

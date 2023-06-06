@@ -1,0 +1,84 @@
+<section class="detail-rental container">
+  <h1>Detail Rental</h1>
+  <picture>
+    <source
+      srcset="/assets/images/Mapsw486.png"
+      type="image/png"
+      media="(min-width: 486px)"
+    />
+    <source
+      srcset="/assets/images/Maps.png"
+      type="image/png"
+      media="(max-width: 486px)"
+    />
+    <img src="/assets/images/Mapsw486.png" alt="" />
+  </picture>
+
+  <div class="car">
+    <img src="assets/images/GTR_2.png" alt="" />
+    <h2 class="car-name">Nissan GT-R</h2>
+    <div class="car-type">Sport Car</div>
+    <div class="car-number">#9761</div>
+  </div>
+
+  <div class="rental-form">
+    <form>
+      <div class="form-title">
+        <input type="checkbox" name="Pick-Up-checkbox" id="PickUp-check" />
+        <label for="PickUp-check"> Pick-Up</label>
+      </div>
+      <div class="form-body">
+        <div class="body-elements location">
+          <label for="location">Loacations</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Kota Semarang"
+          />
+        </div>
+
+        <div class="body-elements time">
+          <label for="time">Time</label>
+          <input type="text" name="time" id="time" placeholder="07.00" />
+        </div>
+
+        <div class="body-elements">
+          <label for="date">Date</label>
+          <input type="text" name="date" id="date" placeholder="20 July 2022" />
+        </div>
+      </div>
+
+      <div class="form-title">
+        <input type="checkbox" name="Drop-off-checkbox" id="DropOff-check" />
+        <label for="DropOff-check"> Drop-Off</label>
+      </div>
+      <div class="form-body">
+        <div class="body-elements location">
+          <label for="location">Loacations</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            placeholder="Kota Semarang"
+          />
+        </div>
+
+        <div class="body-elements time">
+          <label for="time">Time</label>
+          <input type="text" name="time" id="time" placeholder="01.00" />
+        </div>
+
+        <div class="body-elements">
+          <label for="date">Date</label>
+          <input type="text" name="date" id="date" placeholder="21 July 2022" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="rental-total">
+    <h1>Total Rental Price</h1>
+    <div class="overall">Overall price rental</div>
+    <div class="price">$80.00</div>
+  </div>
+</section>
