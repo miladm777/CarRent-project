@@ -615,6 +615,7 @@ label {
   }
 }
 
+/* Sidebar */
 .sidebar {
   display: none;
   grid-area: sidebar;
@@ -630,13 +631,13 @@ label {
   }
 }
 .sidebar h3 {
-  margin: 3.6rem 0;
+  margin: 2rem 0;
   color: #94a7cb66;
 }
 .sidebar .sidebar__items {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 0.1rem 0;
   padding: 1.5rem 0;
   border-radius: 10px;
 }
