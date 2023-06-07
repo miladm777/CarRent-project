@@ -633,12 +633,13 @@ label {
 .sidebar h3 {
   margin: 2rem 0;
   color: #94a7cb66;
+  padding-left: 0.5rem;
 }
 .sidebar .sidebar__items {
   display: flex;
   align-items: center;
   margin: 0.1rem 0;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0.5rem;
   border-radius: 10px;
 }
 .sidebar .sidebar__items img {
@@ -649,6 +650,7 @@ label {
   width: 20px;
   height: 20px;
   color: #90a3bf;
+  /* padding-left: 0.5rem; */
 }
 
 .sidebar .sidebar__items a {
