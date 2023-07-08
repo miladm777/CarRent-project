@@ -9,6 +9,8 @@
 :root {
   --color-background: #f6f7f9;
   --color-primary: #3563e9;
+  --color-secondary-500: #1A202C;
+  --color-secondary-300: #90A3BF;
 }
 html {
   font-size: 62.5%;
@@ -22,15 +24,32 @@ body {
 h1 {
   font-weight: 700px;
   font-size: 24px;
-}
 
-@media screen and (min-width:768px) {
-  h1{
-    font-size: 32px;
-    font-weight: 700px;
-  }
-  
 }
+h2 {
+  font-weight: 700px;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--color-secondary-500);
+}
+a {
+  font-weight: 500px;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--color-secondary-300);
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  a {
+    font-size: 14px;
+  }
+}
+/* Navbar */
 .navbar {
   height: 92px;
   background-color: #ffffff;
@@ -54,40 +73,52 @@ h1 {
   height: 28px;
   margin-left: 0.5rem;
 }
-.profile .notif__bar{
-    display: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid #C3D4E966;
-    margin-left: 0.5rem;
+.profile .notif__bar {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #c3d4e966;
+  margin-left: 0.5rem;
 }
-
 
 .profile .notif__bar img {
   padding: 0.3rem;
   width: 100%;
   height: 100%;
   /* background-color: red; */
-  
 }
 
-@media screen and (min-width:768px) {
-  .navbar{
+@media screen and (min-width: 768px) {
+  .navbar {
     padding-left: 6rem;
   }
   .profile__pic img {
-
     width: 44px;
     height: 44px;
   }
-  .profile .notif__bar{
+  .profile .notif__bar {
     display: inline-block;
-    
-}
-.profile .notif__bar img {
-  padding: 1.2rem;
- 
+  }
+  .profile .notif__bar img {
+    padding: 1.2rem;
+  }
 }
 
+/* container */
+.container {
+  background-color: #ffffff;
+  margin: 3.2rem 2.4rem;
+  padding: 1.6rem;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 2.4rem;
+  }
+}
+
+.Rental-summary{
+  max-width: 500px;
 }
